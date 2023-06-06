@@ -1,7 +1,7 @@
 <template>
-    <div class="flex h-screen w-screen">
-        <header-bar :isShow="isShow" @showhome="show2"></header-bar>
-        <Content :isShow1="isShow1" @onshow="show1"></Content>
+    <div class="flex h-screen w-screen relative">
+        <header-bar :isShow="isShow" ></header-bar>
+        <Content @showmenu="show"></Content>
     </div>
 </template>
 
@@ -13,20 +13,16 @@ const Home = {
     data(){
         return {
             isShow: true,
-            isShow1: true
         }
     },
     components: {
         HeaderBar,
-        Content
+        Content,
     },
     methods:{
-        show1(){
+        show(){
             this.isShow = !this.isShow
         },
-        show2(){
-            this.isShow1 = !this.isShow1
-        }
     }
 }
 export default Home
